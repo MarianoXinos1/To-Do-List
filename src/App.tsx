@@ -26,9 +26,18 @@ function App() {
 
   const [list, setList] = useState(mockupList)
 
+  //Filtra para borrar mi elemento de id dif
+  const elementRemove = (id: string) => {                                   
+    const newToDo = list.filter(list => list.id !== id);   
+    setList(newToDo);
+  }
+
   return (
     <section className='contenedor'>
-      <List lists={list} />
+      <List
+        lists = {list}
+        onRemoveList = {elementRemove} 
+      />
     </section>
   )
 }
