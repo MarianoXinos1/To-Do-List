@@ -2,12 +2,13 @@ import React from 'react'
 import { ToDo } from './ToDo'
 import './List.css'
 
-interface ListProps {
-    lists: {id:string; title: string; completed:boolean}[]
-    onRemoveList: (id: string) => void;                         //Al ser una funcion typescript me pide que indique si devulve algo o no, void = no
+export interface ListProps {
+    lists: {id:number; title: string; completed:boolean}[]
+    onRemoveList: (id: number) => void;                                                             //Al ser una funcion typescript me pide que indique si devulve algo o no, void = no
+    onToggleCompletedList: ({ id, completed }: { id: number, completed: boolean }) => void;
 }
 
-export const List: React.FC<ListProps> = ({ lists, onRemoveList }) => {
+export const List: React.FC<ListProps> = ({ lists, onRemoveList, onToggleCompletedList }) => {
 
     return(
         <>
@@ -29,6 +30,7 @@ export const List: React.FC<ListProps> = ({ lists, onRemoveList }) => {
                                 title = {list.title}
                                 completed = {list.completed}
                                 onRemoveList  = {onRemoveList}
+                                onToggleCompletedList = { onToggleCompletedList }
                             />
                         </li>
                     );
@@ -38,3 +40,4 @@ export const List: React.FC<ListProps> = ({ lists, onRemoveList }) => {
     );
   };
 
+  //https://github.com/tastejs/todomvc-app-css/blob/main/index.css
