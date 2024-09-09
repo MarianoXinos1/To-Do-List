@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { List } from './components/List'
+import { Header} from './components/Header'
 
 
 import './App.css'
@@ -8,19 +9,10 @@ import './App.css'
 const mockupList = [
   {
     id: 1,
-    title:'Curso Figma',
+    title:'hi',
     completed:false
   },
-  {
-    id: 2,
-    title: 'Cenar con mi bb',
-    completed: false
-  },
-  {
-    id: 3,
-    title: 'GYM',
-    completed: true
-  }
+
 ]
 
 
@@ -36,21 +28,35 @@ function App() {
 
   //Actualiza tarea como completada o no cambiando su completed
   const elementCompleted = ({ id, completed }: { id: number, completed: boolean }) => {
-    const newLists = list.map(list =>{
-      if(list.id === id){
+    const newLists = list.map(lista =>{
+      if(lista.id === id){
         return{
-          ...list,                                                                         
-          completed                                                                  // si list esta false aca la va a sobrescribirla por el parametro que pusiste(ya sea false o true).
+          ...lista,                                                                         
+          completed             // Sobrescribe la propiedad completed con el valor proporcionado.
         }
       }
-      return list
+      return lista
     });
     setList(newLists);
   };
 
+
+  const handleAddTodo = (title: string) => {
+    const newTodo = {
+      title,
+      id: crypto.randomUUID(),
+      completed: false
+    };
+    const newTodos = [...list, newTodo];
+    setList(newTodos);
+  };
+
+
   return (
+    
     <section className='contenedor'>
       <List
+        onAddTodo={handleAddTodo}
         onToggleCompletedList = {elementCompleted}
         lists = {list}
         onRemoveList = {elementRemove} 

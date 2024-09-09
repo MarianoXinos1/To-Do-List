@@ -10,7 +10,6 @@ interface Props {
 
 export const ToDo: React.FC<Props> = ({  id, title, completed, onRemoveList, onToggleCompletedList  }) => {
 
-
     return(
         <div  className="view">
             <input className="toggle"  type= 'checkbox' checked= {completed}
