@@ -184,6 +184,16 @@
 	margin-top: 2px;
 }
 
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    .tarjeta-secun li .toggle:checked + label {
+        text-decoration: line-through;
+    }
+
+    .tarjeta-secun li.completed label {
+        text-decoration: line-through;
+    }
+}
 
 /* Estilos para pantallas más grandes (escritorio) */
 @media (min-width: 1024px) {
