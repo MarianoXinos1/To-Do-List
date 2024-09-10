@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { List } from './components/List'
-import { Header} from './components/Header'
 
 
 import './App.css'
@@ -9,7 +8,7 @@ import './App.css'
 const mockupList = [
   {
     id: 1,
-    title:'hi',
+    title:'Daily Tasks:',
     completed:false
   },
 
@@ -53,7 +52,6 @@ function App() {
 
 
   return (
-    
     <section className='contenedor'>
       <List
         onAddTodo={handleAddTodo}
@@ -62,6 +60,7 @@ function App() {
         onRemoveList = {elementRemove} 
       />
     </section>
+    
   )
 }
 

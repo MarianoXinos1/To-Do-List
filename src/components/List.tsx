@@ -17,7 +17,7 @@ export const List: React.FC<ListProps> = ({ lists, onRemoveList, onToggleComplet
         <>
             <section className='tarjeta-principal'>
                 <div className='tarjeta-principal_combo'>
-                    <h1>Hola</h1>
+                    <h1>Hello</h1>
                     <h2>Focus on the essentials! </h2>
                 <CreateTodo saveTodo= {onAddTodo} />
                 </div>

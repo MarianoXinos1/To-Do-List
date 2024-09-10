@@ -1,12 +1,31 @@
-.contenedor{
+.contenedor {
     background-color: white;
-	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
-	            0 25px 50px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+                0 25px 50px 0 rgba(0, 0, 0, 0.1);
     min-width: 400px;
-	max-width: 550px;
-	min-height: 896px;
-	padding-right: 20px;
-	margin: 0 auto;
-    
+    max-width: 550px;
+    min-height: 896px;
+    padding-right: 20px;
+    margin: 0 auto;
+    position: relative; /* Necesario para el pseudo-elemento */
+    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
 }
 
+@media (min-width: 1024px) {
+
+
+    .contenedor {
+        max-width: 800px; 
+        min-height: 400px;
+        padding: 40px; 
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(800px);  /* Efecto para fondo borroso */
+        z-index: 1; /* Asegura que el contenido del contenedor esté por encima del pseudo-elemento */
+    }
+
+     
+   
+	
+}
