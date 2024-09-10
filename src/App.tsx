@@ -29,7 +29,7 @@ function App() {
       if(lista.id === id){
         return{
           ...lista,                                                                         
-          completed             // Sobrescribe la propiedad completed con el valor proporcionado.
+          completed           // Sobrescribe la propiedad completed con el valor proporcionado.
         }
       }
       return lista
