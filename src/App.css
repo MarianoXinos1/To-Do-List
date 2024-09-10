@@ -1,4 +1,6 @@
+
 .contenedor {
+
     background-color: rgba(255, 255, 255, 0.664);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
                 0 25px 50px 0 rgba(0, 0, 0, 0.1);
@@ -7,7 +9,7 @@
     min-height: 896px;
     padding-right: 20px;
     margin: 0 auto;
-
+    
     background: white;
     background-image: radial-gradient(#e5e7eb  0.8px, transparent 1px);
     background-size: 16px 16px;
@@ -24,6 +26,8 @@
         border: 2px solid rgba(255, 255, 255, 0.2);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
         background: white;
+        margin-top: 85px;
+       
     }
 
     .contenedor::before {

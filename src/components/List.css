@@ -25,12 +25,12 @@
 }
 
 .tarjeta-principal h1 {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .tarjeta-principal_combo {
     margin-left: 20px;
-    margin-top: 16px;
+    margin-top: 14px;
 }
 
 .pepe {
@@ -185,7 +185,7 @@
 
 
 /* Estilos para pantallas más grandes (escritorio) */
-@media (min-width: 769px) {
+@media (min-width: 1024px) {
     .tarjeta-principal {
         flex-direction: row;
         height: 175px;
@@ -203,12 +203,10 @@
 
     .tarjeta-principal_combo {
         margin-left: 38px;
-        margin-top: 10px;
-    
+        margin-top: 8px;
     }
 
     .pepe {
-        
         margin: 20px 0 40px 0px;
         border-radius: 25px;
     }
@@ -218,13 +216,9 @@
         min-width: 400px;
     }
 
-    .tarjeta-secun li {
-        font-size: 20px;
-        padding-right: 280px;
-    }
 
     .tarjeta-secun li label {
-        font-size: 18px
+        font-size: 17px
     }
 
 
@@ -237,6 +231,7 @@
     .new-todo {
         font-size: 12px;
         height: 18px;
+        
 		
     }
 }
