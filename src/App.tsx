@@ -1,7 +1,5 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { List } from './components/List'
-
-
 import './App.css'
 
 
@@ -43,7 +41,7 @@ function App() {
   const handleAddTodo = (title: string) => {
     const newTodo = {
       title,
-      id: crypto.randomUUID(),
+      id: Date.now(),
       completed: false
     };
     const newTodos = [...list, newTodo];
