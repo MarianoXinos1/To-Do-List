@@ -10,11 +10,15 @@ interface Props {
 } 
 
 export const ToDo: React.FC<Props> = ({  id, title, completed, onRemoveList, onToggleCompletedList  }) => {
-                                                                                                                            
+
+    const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        onToggleCompletedList({ id, completed: event.target.checked });
+    };
+
     return(
         <div  className= {`view ${completed ? 'completed' : ''}`}>
             <input className="toggle"  type= 'checkbox' checked= {completed}
-                    onChange= {(event) => { onToggleCompletedList({ id, completed: event.target.checked }) }} />   
+                    onChange= {handleCheckboxChange} />   
 
             <label> {title} </label>
             <button className='destroy' onClick={ () => { onRemoveList(id)} } />
