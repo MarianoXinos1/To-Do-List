@@ -1,5 +1,5 @@
 .contenedor {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.664);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
                 0 25px 50px 0 rgba(0, 0, 0, 0.1);
     min-width: 400px;
@@ -7,25 +7,36 @@
     min-height: 896px;
     padding-right: 20px;
     margin: 0 auto;
-    position: relative; /* Necesario para el pseudo-elemento */
-    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
+
+    background: white;
+    background-image: radial-gradient(#e5e7eb  0.8px, transparent 1px);
+    background-size: 16px 16px;
+    
 }
 
-@media (min-width: 1024px) {
 
+@media (min-width: 1024px) {
 
     .contenedor {
         max-width: 800px; 
         min-height: 400px;
         padding: 40px; 
-        background: transparent;
         border: 2px solid rgba(255, 255, 255, 0.2);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-        backdrop-filter: blur(800px);  /* Efecto para fondo borroso */
-        z-index: 1; /* Asegura que el contenido del contenedor esté por encima del pseudo-elemento */
+        background: white;
     }
 
-     
-   
+    .contenedor::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: white;
+        background-image: linear-gradient(to right, #e7e9f2  1px, transparent 1px),
+                          linear-gradient(to bottom, #e7e9f2  1px, transparent 1px);
+        background-size: 14px 24px;
+        mask-image: radial-gradient(ellipse 70% 70% at 60% 0%, #000 20%, transparent 110%);
+        z-index: -10;
+    }
+
 	
 }

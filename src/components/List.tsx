@@ -24,22 +24,22 @@ export const List: React.FC<ListProps> = ({ lists, onRemoveList, onToggleComplet
 
             </section>
             <section className='pepe'>
-            <ul className='tarjeta-secun'>
-                {lists.map((list) => {
-                    return (
-                        <li key = {list.id}  className= { `${list.completed ? 'completed' : '' }` }>
-                            <ToDo
-                                key = {list.id}
-                                id = {list.id}
-                                title = {list.title}
-                                completed = {list.completed}
-                                onRemoveList  = {onRemoveList}
-                                onToggleCompletedList = { onToggleCompletedList }
-                            />
-                        </li>
-                    );
-                })}
-            </ul>
+                <ul className='tarjeta-secun'>
+                    {lists.map((list) => {
+                        return (
+                            <li key = {list.id}  className= { `${list.completed ? 'completed' : '' }` }>
+                                <ToDo
+                                    key = {list.id}
+                                    id = {list.id}
+                                    title = {list.title}
+                                    completed = {list.completed}
+                                    onRemoveList  = {onRemoveList}
+                                    onToggleCompletedList = { onToggleCompletedList }
+                                />
+                            </li>
+                        );
+                    })}
+                </ul>
             </section>
         </>
     );
