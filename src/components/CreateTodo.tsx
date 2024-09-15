@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './List.css'
 
 interface Props {
-    
     saveTodo: (title: string) => void
 } 
 

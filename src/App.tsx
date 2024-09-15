@@ -1,9 +1,14 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { List } from './components/List'
 import './App.css'
 
+interface TodoItem {
+  id: number,
+  title:string,
+  completed: boolean
+}
 
-const mockupList = [
+const mockupList:TodoItem[] = [
   {
     id: 1,
     title:'Daily Tasks:',
@@ -15,11 +20,35 @@ const mockupList = [
 
 function App() {
 
-  const [list, setList] = useState(mockupList)
+
+  const [list, setList] = useState<TodoItem[]>(()=> {                           
+    try{
+    //Recupera del localStorage                                      //No tiene sentido que lo ponga en el useEffect, para evitar cada renderizado.
+    const savedList = localStorage.getItem('todoList');             
+    return savedList ? JSON.parse(savedList) : mockupList;         
+    }
+    catch (error){
+      console.log('Error loading list from localStorage',error)
+      return mockupList
+    }
+
+  })
+
+
+  //Guardar lista en localStorage cada vez que cambie.
+  useEffect(() => {
+    try{
+      localStorage.setItem('todoList', JSON.stringify(list))          //localStorage al ser una APIs debe ser almacenado como cadena texto.
+    } catch (error){
+      console.log('Error saving list to localStorage',error);
+    }
+  
+  }, [list])
+
 
   //Filtra para borrar mi elemento de id dif
   const elementRemove = (id: number) => {                                   
-    const newToDo = list.filter(list => list.id !== id);   
+    const newToDo = list.filter(lista => lista.id !== id);   
     setList(newToDo);
   }
 
